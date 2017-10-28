@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="PicoBorgRevGui.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Slider x:Name="Motor1Slider" Header="Motor 1" Height="200"
+                ValueChanged="Motor1Slider_ValueChanged" Orientation="Vertical" Minimum="-1" Maximum="1" Value="0"
+                TickPlacement="BottomRight" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center"
+                VerticalAlignment="Center" StepFrequency="0.05" TickFrequency="0.1" />
+
+        <Slider x:Name="Motor2Slider" Header="Motor 2" Height="200"
+                ValueChanged="Motor2Slider_ValueChanged" Orientation="Vertical" Minimum="-1" Maximum="1" Value="0"
+                TickPlacement="BottomRight" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center"
+                VerticalAlignment="Center" StepFrequency="0.05" TickFrequency="0.1" />
+        <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+
+            </Grid.RowDefinitions>
+            <Button x:Name="AllStopButton" Content="All Stop" Click="AllStopButton_OnClick" Grid.Row="0" Width="200" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <ScrollViewer Name="scrollViewer" Grid.Row="1">
+                <TextBlock x:Name="outputTextBlock" Text="" TextWrapping="WrapWholeWords"/>
+            </ScrollViewer>
+        </Grid>
+       
+    </Grid>
+</Page>
